@@ -5,30 +5,7 @@
 	<script type="text/javascript" src="js/angular/angular.min.js"></script>
 </head>
 <body>
-	<textarea ng-model="name"></textarea> 
-	<div>Hello {{name}}</div>
-
-	<div><br><b>Expressions</b></div>
-	<div>10 + 10 = {{10+10}}</div>
-	<div>10 x 10 = {{10*10}}</div>
-
-	<div><br><b>ng-init</b></div><br>
-	<div ng-init="language='Angular-js'">
-
-		Your preferred language is: <input type="text" ng-model="language">{{language}}
-	</div>
-
-	<div><br><b>ng-repeat</b></div><br>
-	<div
-	ng-init="myFavouriteLanguage=[
-	{name:'PHP',extension:'.php'},
-	{name:'javascript',extension:'.js'},
-	{name:'C#',extension:'.cs'}]">
-	<span ng-repeat="lang in myFavouriteLanguage">
-		Name: {{lang.name}} - Extension: {{lang.extension}}<br>
-	</span>
-
-	</div>
+	 
 
 	<div><br><b>Controllers</b></div><br>
 	<div ng-controller="languages">
