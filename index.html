@@ -17,5 +17,19 @@
 	
 	Your preferred language is: <input type="text" ng-model="language">{{language}}
 	</div>
+
+	<div><br><b>ng-repeat</b></div><br>
+	<div
+	ng-init="myFavouriteLanguage=[
+	{name:'PHP',extension:'.php'},
+	{name:'javascript',extension:'.js'},
+	{name:'C#',extension:'.cs'}]">
+		<p ng-repeat="lang in myFavouriteLanguage">
+			Name: {{lang.name}} <br>
+			Extension: {{lang.extension}}
+		</p>
+
+	</div>
+
 </body>
 </html>
