@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="myLanguageApp">
 <head>
 	<title>Codedamn | Angular Js Hands On</title>
 	<script type="text/javascript" src="js/angular/angular.min.js"></script>
@@ -14,8 +14,8 @@
 
 	<div><br><b>ng-init</b></div><br>
 	<div ng-init="language='Angular-js'">
-	
-	Your preferred language is: <input type="text" ng-model="language">{{language}}
+
+		Your preferred language is: <input type="text" ng-model="language">{{language}}
 	</div>
 
 	<div><br><b>ng-repeat</b></div><br>
@@ -24,12 +24,34 @@
 	{name:'PHP',extension:'.php'},
 	{name:'javascript',extension:'.js'},
 	{name:'C#',extension:'.cs'}]">
-		<p ng-repeat="lang in myFavouriteLanguage">
-			Name: {{lang.name}} <br>
-			Extension: {{lang.extension}}
-		</p>
+	<span ng-repeat="lang in myFavouriteLanguage">
+		Name: {{lang.name}} - Extension: {{lang.extension}}<br>
+	</span>
 
 	</div>
 
+	<div><br><b>Controllers</b></div><br>
+	<div ng-controller="languages">
+		Select your favourite language:
+		<button ng-click="php()">PHP</button>
+		<button ng-click="javascript()">Javascript</button>
+		<button ng-click="csharp()">C#</button>
+		You have selected: {{myFavLanguage}}
+	</div>
+<script>
+	var application = angular.module('myLanguageApp',[]);
+	application.controller('languages',['$scope',function($scope){
+		$scope.myFavLanguage='None';
+		$scope.php=function(){
+			$scope.myFavLanguage='PHP';
+		};
+		$scope.javascript=function(){
+			$scope.myFavLanguage='javascript';
+		};
+		$scope.csharp=function(){
+			$scope.myFavLanguage='c#';
+		};
+	}])
+</script>
 </body>
 </html>
