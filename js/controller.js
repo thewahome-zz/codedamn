@@ -47,4 +47,11 @@ app.controller('loginCtrl', function($scope, $location){
 
 		}else{$location.path('/error')}
 	}
-})
+});
+
+app.controller('people',function($scope,$http){
+	$http.get('http://localhost:81/angular/codedamn/data/database.json')
+	.success(function(response){
+		$scope.persons=response.records;
+	});
+});
