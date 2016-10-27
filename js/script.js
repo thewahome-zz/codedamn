@@ -29,3 +29,11 @@ app.provider('fromProvider',function(){
 app.controller('fromSFPCtrl',function($scope,fromService,fromFactory,fromProvider){
   $scope.greetingsMessage=[fromService.message,fromFactory.message,fromProvider.message];
 });
+
+app.controller('ngShowDirectiveCtrl',function($scope){
+	$scope.show='firstMessage';
+	$scope.toggle=function(){
+		$scope.show = $scope.show == 'firstMessage' ? 'secondMessage' : 'firstMessage';
+	};
+
+});
