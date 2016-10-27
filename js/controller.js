@@ -55,3 +55,12 @@ app.controller('people',function($scope,$http){
 		$scope.persons=response.records;
 	});
 });
+
+app.controller('loopCtrl',function($scope){
+	var range = 10;
+	var myRange = [];
+	for (i = 0; i < range; i++) {
+		myRange.push(i);
+	}
+	$scope.myRange=myRange;
+});
