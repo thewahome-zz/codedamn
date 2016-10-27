@@ -64,3 +64,12 @@ app.controller('loopCtrl',function($scope){
 	}
 	$scope.myRange=myRange;
 });
+
+app.controller('counterCtrl',function($scope){
+	$scope.counter = -1;
+	$scope.$watch('myText',function(newValue,oldValue){
+		/*console.log("New Value: "+newValue);
+		console.log("Old Value: "+oldValue);*/
+		$scope.counter++;
+	});
+});
