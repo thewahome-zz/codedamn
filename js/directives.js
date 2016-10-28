@@ -32,3 +32,18 @@ app.directive('mySecondDirective',function(){
 		template: '<span ng-click="changeName(\'hey there \')">Current text: {{name}}</span>'
 	}
 });
+
+app.directive('myThirdDirective',function(){
+	function thirdLinkFunction($scope,elem,attrs){
+		$scope.name = "Hello World";
+		$scope.changeName = function(newName){
+			$scope.name = newName;
+		}
+	}
+	return {
+		restrict: 'EA',
+		scope:true,
+		link: thirdLinkFunction,
+		template: '<span ng-click="changeName(\'hey there \')">Current text: {{name}}</span>'
+	}
+});
